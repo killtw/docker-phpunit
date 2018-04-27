@@ -1,7 +1,7 @@
 FROM php:7.2-alpine
 
-RUN apk add --no-cache --virtual build-dependencies g++ make autoconf libpng && \
-    apk add -U libpng-dev && \
+RUN apk add --no-cache --virtual build-dependencies g++ make autoconf libpng libjpeg-turbo && \
+    apk add -U libpng-dev libjpeg-turbo-dev && \
     pecl install xdebug && \
     docker-php-ext-enable xdebug && \
     docker-php-ext-install gd && \
